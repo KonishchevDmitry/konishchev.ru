@@ -14,7 +14,9 @@
         <style>
             div#badge {
                 width: 300px;
-                height: 233px;
+                // TODO
+                //height: 233px;
+                height: 500px;
 
                 position: absolute;
                 top: 0;
@@ -25,6 +27,58 @@
                 margin: auto;
                 padding: 0;
             }
+
+            div.contacts {
+                border: 1px solid #d8d8d8;
+                border-bottom-width: 2px;
+
+                border-top: 5px solid #6f85bf;
+
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+
+                vertical-align: top;
+
+                font: normal 13px Roboto,arial,sans-serif;
+
+                padding: 15px;
+            }
+            div.contacts a {
+                color: #427fed;
+            }
+            div.contacts em {
+                font-style: normal;
+                font-weight: bold;
+            }
+            div.contacts p.section {
+                margin: 16px 0px 0px;
+                padding: 0;
+            }
+            div.contacts p.section:first-child {
+                margin-top: 0;
+            }
+            div.contacts div.section-body {
+                margin: 10px 0px 0px;
+                padding: 0;
+            }
+            div.contacts ul {
+                margin: 0;
+                padding: 0;
+            }
+            div.contacts li {
+                list-style-type: none;
+                height: 16px;
+                margin-top: 10px;
+                vertical-align: bottom;
+            }
+            div.contacts li:first-child {
+                margin-top: 0;
+            }
+            div.contacts img {
+                vertical-align: bottom;
+            }
         </style>
 
         <noscript>
@@ -32,7 +86,9 @@
 
             <style>
                 div#badge {
-                    width: 200px;
+                    width: 300px;
+                    // TODO
+                    //width: 200px;
                     height: 172px;
                     font: normal 16px Roboto,arial,sans-serif;
                 }
@@ -91,6 +147,34 @@
                     </a>
                 </div>
             </noscript>
+
+            <div class="contacts">
+
+                <p class="section">
+                    <em>Дмитрий Конищев</em>
+                    <div class="section-body">
+                        г. Жуковский Московской обл.<br>
+                        Разработчик в "КРОК инкорпорейтед"
+                    </div>
+                </p>
+
+                <p class="section">
+                    <em>Контакты:</em>
+                    <div class="section-body">
+                    <ul>
+                        <li><img src="//mail.google.com/favicon.ico"> <img src="http://services.nexodyne.com/email/icon/kUES4IxNaTzKxw%3D%3D/7W7zkE0%3D/R01haWw%3D/0/image.png"></li>
+                        <li><img src="//github.com/favicon.ico"> <a href="https://github.com/KonishchevDmitry">GitHub</a></li>
+                        <li><img src="//vk.com/favicon.ico"> <a href="https://vk.com/konishchevdmitry">ВКонтакте</a></li>
+                        <li><img src="//twitter.com/favicon.ico"> <a href="http://twitter.com/konishchev">Twitter</a></li>
+                        <li><img src="//linkedin.com/favicon.ico"> <a href="https://www.linkedin.com/in/konishchev">LinkedIn</a></li>
+                        <li><img src="//moikrug.ru/favicon.ico"> <a href="https://konishchevdmitry.moikrug.ru/">Мой Круг</a></li>
+                        <li><img src="//facebook.com/favicon.ico"> <a href="https://www.facebook.com/dmitry.konishchev">Facebook</a></li>
+                        <li><img src="//blogger.com/favicon.ico"> <a href="http://konishchevdmitry.blogspot.com/">KonishchevDmitry's small blog</a></li>
+                    </ul>
+                    </div>
+                </p>
+
+            </div>
         </div>
 
         <script type="text/javascript">
