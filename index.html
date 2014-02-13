@@ -77,7 +77,9 @@
 
     <body>
         <div id="badge">
-            <div class="g-person" data-href="//plus.google.com/117508430140925454932" data-rel="author"></div>
+            <div class="g-person" data-width="300" data-showtagline="false"
+                data-showcoverphoto="false" data-rel="author"
+                data-href="//plus.google.com/117508430140925454932"></div>
 
 
             <!-- Fall back to a simple version for search engines -->
@@ -91,10 +93,15 @@
             </noscript>
         </div>
 
-        <script type="text/javascript">(function() {
+        <script type="text/javascript">
+        // For future multi-language support
+        //window.___gcfg = {lang: 'ru'};
+
+        (function() {
             var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
             po.src = 'https://apis.google.com/js/platform.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-        })();</script>
+        })();
+        </script>
     </body>
 </html>
