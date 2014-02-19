@@ -8,8 +8,8 @@
         <meta name="keywords" content="Dmitry Konishchev, Дмитрий Конищев, profile, профиль">
         <meta name="description" content='Developer at CROC Incorporated | г. Жуковский Московской обл., Разработчик в "КРОК инкорпорейтед"'>
 
-        <link rel="icon" sizes="16x16" type="image/x-icon" href="images/favicon.ico">
-        <link rel="icon" sizes="48x48" type="image/png" href="images/favicon.png">
+        <link rel="icon" sizes="16x16" type="image/x-icon" href="{{ url_for("static", filename="images/favicon.ico") }}">
+        <link rel="icon" sizes="48x48" type="image/png" href="{{ url_for("static", filename="images/favicon.png") }}">
 
         <style>
             div#badge {
@@ -86,7 +86,8 @@
             <noscript>
                 <div class="border center" itemscope itemtype="http://schema.org/Person">
                     <a href="https://www.google.com/+DmitryKonishchev" itemprop="url">
-                        <img id="photo" width="120" height="120" src="images/photo.jpg" itemprop="image">
+                        <img id="photo" width="120" height="120" itemprop="image"
+                            src="{{ url_for("static", filename="images/photo.jpg") }}">
                         <span itemprop="name">Dmitry Konishchev</span>
                     </a>
                 </div>
