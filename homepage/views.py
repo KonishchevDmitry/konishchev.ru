@@ -6,7 +6,7 @@ from homepage import util
 @app.route("/")
 @util.templated("index.html")
 def index():
-    pass
+    return { "lang": util.get_locale() }
 
 @app.route("/favicon.ico")
 def favicon():
