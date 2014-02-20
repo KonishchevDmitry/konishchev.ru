@@ -18,7 +18,7 @@ $(MO_PATH): $(PO_PATH)
 
 $(PO_PATH): $(POT_PATH)
 	[ -f $(PO_PATH) ] || { mkdir -p $(TRANSLATIONS_DIR) && pybabel init -i $(POT_PATH) -d $(TRANSLATIONS_DIR) -l $(LANG); }
-	pybabel update -i $(POT_PATH) -d $(TRANSLATIONS_DIR)
+	pybabel update -i $(POT_PATH) -d $(TRANSLATIONS_DIR) --ignore-obsolete
 
 $(POT_PATH): $(TRANSLATION_SOURCES)
 	pybabel extract -F $(BABEL_CONFIG_PATH) -o $(POT_PATH) .
