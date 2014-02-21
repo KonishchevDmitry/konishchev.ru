@@ -12,6 +12,16 @@
         <link rel="icon" sizes="48x48" type="image/png" href="{{ url_for("static", filename="images/favicon.png") }}">
 
         <style>
+            img {
+                border-style: none;
+            }
+
+            img.flag {
+                width: 16px;
+                height: 16px;
+                vertical-align: bottom;
+            }
+
             div#badge {
                 width: 300px;
                 height: 233px;
@@ -77,6 +87,15 @@
 
     <body>
         <div id="badge">
+            <!-- <div style="text-align: right">
+                <a href="{{ url_for("index", lang="ru") }}"><img
+                    class="flag" title="Русская версия" alt="ru"
+                    src="{{ url_for("static", filename="images/flag-ru.png") }}"></a>
+                <a href="{{ url_for("index", lang="en") }}"><img
+                    class="flag" title="English version" alt="en"
+                    src="{{ url_for("static", filename="images/flag-us.png") }}"></a>
+            </div> -->
+
             <div class="g-person" data-width="300" data-showtagline="false"
                 data-showcoverphoto="false" data-rel="author"
                 data-href="//plus.google.com/117508430140925454932"></div>
