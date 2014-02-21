@@ -1,4 +1,5 @@
 from flask import request
+from flask.ext.babel import _
 
 from homepage import app
 from homepage import util
@@ -6,7 +7,14 @@ from homepage import util
 @app.route("/")
 @util.templated("index.html")
 def index():
-    return { "lang": util.get_locale() }
+    full_name = _("Dmitry Konishchev")
+
+    return {
+        "lang": util.get_locale(),
+        "keywords": full_name + ", " + _("profile"),
+        "description": _("Developer at CROC Incorporated | Russian Federation"),
+        "full_name": full_name,
+    }
 
 @app.route("/favicon.ico")
 def favicon():
