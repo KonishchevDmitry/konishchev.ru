@@ -11,7 +11,7 @@ TRANSLATION_SOURCES = $(shell find . -name '*.py' && find templates -name '*.htm
 build: $(MO_PATH)
 
 clean:
-	rm -f $(POT_PATH) $(MO_PATH)
+	rm -f $(POT_PATH) $(PO_PATH).orig $(MO_PATH)
 
 $(MO_PATH): $(PO_PATH)
 	pybabel compile -d $(TRANSLATIONS_DIR) -l $(LANG)
@@ -19,7 +19,7 @@ $(MO_PATH): $(PO_PATH)
 $(PO_PATH): $(POT_PATH)
 	[ -f $(PO_PATH) ] || { mkdir -p $(TRANSLATIONS_DIR) && pybabel init -i $(POT_PATH) -d $(TRANSLATIONS_DIR) -l $(LANG); }
 	pybabel update -i $(POT_PATH) -d $(TRANSLATIONS_DIR) --ignore-obsolete --previous
-	sed -i '' '/^#: /d; /^"POT-Creation-Date: /d' $(PO_PATH)
+	sed -i.orig '/^#: /d; /^"POT-Creation-Date: /d' $(PO_PATH) && rm -f $(PO_PATH).orig
 
 $(POT_PATH): Makefile $(TRANSLATION_SOURCES)
 	pybabel extract -F $(BABEL_CONFIG_PATH) -o $(POT_PATH) .
