@@ -8,7 +8,7 @@ PO_PATH = $(TRANSLATIONS_DIR)/$(LANG)/LC_MESSAGES/messages.po
 MO_PATH = $(TRANSLATIONS_DIR)/$(LANG)/LC_MESSAGES/messages.mo
 TRANSLATION_SOURCES = $(shell find . -name '*.py' && find templates -name '*.html')
 
-all: $(MO_PATH)
+build: $(MO_PATH)
 
 clean:
 	rm -f $(POT_PATH) $(MO_PATH)
