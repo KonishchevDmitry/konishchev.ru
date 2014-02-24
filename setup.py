@@ -9,6 +9,7 @@ setup(
 
     packages = find_packages(),
     package_data={ "homepage": [
+        "homepage.ini",
         "static/*/*",
         "templates/*.html",
         "translations/*/LC_MESSAGES/messages.mo",
