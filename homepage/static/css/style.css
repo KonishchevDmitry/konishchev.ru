@@ -1,0 +1,77 @@
+img {
+    border-style: none;
+}
+
+img.flag {
+    width: 16px;
+    height: 16px;
+    vertical-align: bottom;
+}
+
+div#badge {
+    width: 300px;
+    /* TODO
+    height: 233px;*/
+    height: 500px;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+    padding: 0;
+}
+
+div.contacts {
+    border: 1px solid #d8d8d8;
+    border-bottom-width: 2px;
+
+    border-top: 5px solid #6f85bf;
+
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    vertical-align: top;
+
+    font: normal 13px Roboto,arial,sans-serif;
+
+    padding: 15px;
+}
+div.contacts a {
+    color: #427fed;
+}
+div.contacts em {
+    font-style: normal;
+    font-weight: bold;
+}
+div.contacts p.section {
+    margin: 16px 0px 0px;
+    padding: 0;
+}
+div.contacts p.section:first-child {
+    margin-top: 0;
+}
+div.contacts div.section-body {
+    margin: 10px 0px 0px;
+    padding: 0;
+}
+div.contacts ul {
+    margin: 0;
+    padding: 0;
+}
+div.contacts li {
+    list-style-type: none;
+    height: 16px;
+    margin-top: 10px;
+    vertical-align: bottom;
+}
+div.contacts li:first-child {
+    margin-top: 0;
+}
+div.contacts img {
+    vertical-align: bottom;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="author" content="{{full_name}}">
+        <meta name="keywords" content="{{keywords}}">
+        <meta name="description" content="{{description}}">
+
+        <link rel="icon" sizes="16x16" type="image/x-icon" href="{{url_for("static", filename="images/favicon.ico")}}">
+        <link rel="icon" sizes="48x48" type="image/png" href="{{url_for("static", filename="images/favicon.png")}}">
+
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic">
+        <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="css/style.css")}}">
+
+        <noscript>
+            <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="css/noscript.css")}}">
+        </noscript>
+
+        <title>{{full_name}}</title>
+    </head>
+
+    <body>
+        <div id="badge">
+            <!-- <div style="text-align: right">
+                <a href="{{url_for("index", lang="ru")}}"><img
+                    class="flag" title="Русская версия" alt="ru"
+                    src="{{url_for("static", filename="images/flag-ru.png")}}"></a>
+                <a href="{{url_for("index", lang="en") }}"><img
+                    class="flag" title="English version" alt="en"
+                    src="{{url_for("static", filename="images/flag-us.png")}}"></a>
+            </div> -->
+
+            <div class="g-person" data-width="300" data-showtagline="false"
+                data-showcoverphoto="false" data-rel="author"
+                data-href="//plus.google.com/117508430140925454932"></div>
+
+            <noscript>
+                <div class="border center" itemscope itemtype="http://schema.org/Person">
+                    <a href="https://www.google.com/+DmitryKonishchev" itemprop="url">
+                        <img id="photo" width="120" height="120" itemprop="image"
+                            src="{{url_for("static", filename="images/photo.jpg")}}">
+                        <span itemprop="name">{{full_name}}</span>
+                    </a>
+                </div>
+            </noscript>
+
+            <p class="section">
+                <em>Контакты:</em>
+                <div class="section-body">
+                <ul>
+                    <li><img src="//mail.google.com/favicon.ico"> <img src="http://services.nexodyne.com/email/icon/kUES4IxNaTzKxw%3D%3D/7W7zkE0%3D/R01haWw%3D/0/image.png"></li>
+                    <li><img src="//github.com/favicon.ico"> <a href="https://github.com/KonishchevDmitry">GitHub</a></li>
+                    <li><img src="//vk.com/favicon.ico"> <a href="https://vk.com/konishchevdmitry">ВКонтакте</a></li>
+                    <li><img src="//twitter.com/favicon.ico"> <a href="http://twitter.com/konishchev">Twitter</a></li>
+                    <li><img src="//linkedin.com/favicon.ico"> <a href="https://www.linkedin.com/in/konishchev">LinkedIn</a></li>
+                    <li><img src="//moikrug.ru/favicon.ico"> <a href="https://konishchevdmitry.moikrug.ru/">Мой Круг</a></li>
+                    <li><img src="//facebook.com/favicon.ico"> <a href="https://www.facebook.com/dmitry.konishchev">Facebook</a></li>
+                    <li><img src="//blogger.com/favicon.ico"> <a href="http://konishchevdmitry.blogspot.com/">KonishchevDmitry's small blog</a></li>
+                </ul>
+                </div>
+            </p>
+        </div>
+
+        <script type="text/javascript">
+            window.___gcfg = {lang: '{{lang}}'};
+
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/platform.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+    </body>
+</html>
