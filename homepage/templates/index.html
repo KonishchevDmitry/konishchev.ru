@@ -22,8 +22,9 @@
     </head>
 
     <body>
-        <div id="badge">
-            <div style="text-align: right">
+        <div id="profile">
+            <div id="language-selector">
+            <div>
                 <a href="{{url_for("index", lang="ru")}}"><img
                     class="flag" title="Русская версия" alt="ru"
                     src="{{url_for("static", filename="images/flag-ru.png")}}"></a>
@@ -31,13 +32,15 @@
                     class="flag" title="English version" alt="en"
                     src="{{url_for("static", filename="images/flag-us.png")}}"></a>
             </div>
+            </div>
 
             <div class="g-person" data-width="300" data-showtagline="false"
                 data-showcoverphoto="false" data-rel="author"
                 data-href="//plus.google.com/117508430140925454932"></div>
 
+            <!-- TODO microdata -->
             <noscript>
-                <div class="border center" itemscope itemtype="http://schema.org/Person">
+                <div id="badge" itemscope itemtype="http://schema.org/Person">
                     <a href="https://www.google.com/+DmitryKonishchev" itemprop="url">
                         <img id="photo" width="120" height="120" itemprop="image"
                             src="{{url_for("static", filename="images/photo.jpg")}}">
@@ -46,26 +49,23 @@
                 </div>
             </noscript>
 
-            <div class="contacts">
-                <p class="section">
-                    <b>{{full_name}}</b>
+            <div id="contacts">
+                <div class="section">
+                    <em>{{full_name}}</em>
                     <div class="section-body">{{location}}<br>{{occupation}}</div>
-                </p>
+                </div>
 
-                <p class="section">
+                <div class="section">
                     <em>{{_("Contacts:")}}</em>
                     <div class="section-body">
-                    <ul>
-                        {% for contact in contacts -%}
-                        <li>
-                            <!-- TODO style -->
-                            <img src="{{url_for("static", filename="images/external-favicons/" + contact[0] + ".ico")}}"
-                                width="16" height="16"><a href="{{contact[1]}}">{{contact[2]}}</a>
-                        </li>
-                        {% endfor %}
+                    <ul class="contacts">
+                        {% for contact in contacts %}<li class="contact">
+                            <img class="icon" src="{{url_for("static", filename="images/external-favicons/" + contact[0] + ".ico")}}"><a
+                                href="{{contact[1]}}">{{contact[2]}}</a>
+                        </li>{% endfor %}
                     </ul>
                     </div>
-                </p>
+                </div>
             </div>
         </div>
 
