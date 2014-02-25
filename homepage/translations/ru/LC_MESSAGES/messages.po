@@ -26,3 +26,15 @@ msgstr "профиль"
 msgid "Developer at CROC Incorporated | Russian Federation"
 msgstr "Разработчик в \"КРОК инкорпорейтед\" | г. Жуковский Московской обл."
 
+msgid "Moscow Region, Russian Federation"
+msgstr "г. Жуковский Московской обл."
+
+msgid "Developer at CROC Incorporated"
+msgstr "Разработчик в \"КРОК инкорпорейтед\""
+
+msgid "VK"
+msgstr "ВКонтакте"
+
+msgid "Contacts:"
+msgstr "Контакты:"
+

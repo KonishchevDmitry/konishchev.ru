@@ -14,6 +14,20 @@ def index():
         "keywords": full_name + ", " + _("profile"),
         "description": _("Developer at CROC Incorporated | Russian Federation"),
         "full_name": full_name,
+
+        "location": _("Moscow Region, Russian Federation"),
+        "occupation": _("Developer at CROC Incorporated"),
+        "contacts": [
+            ( "gmail",    "mailto:konishchev@gmail.com",                "Email"    ),
+            ( "gplus",    "https://www.google.com/+DmitryKonishchev",   "Google+"  ),
+            ( "github",   "https://github.com/KonishchevDmitry",        "GitHub"   ),
+            ( "vk",       "https://vk.com/konishchevdmitry",            _("VK")    ),
+            ( "twitter",  "https://twitter.com/konishchev",             "Twitter"  ),
+            ( "linkedin", "https://www.linkedin.com/in/konishchev",     "LinkedIn" ),
+            ( "moikrug",  "https://konishchevdmitry.moikrug.ru/",       "Мой Круг" ),
+            ( "facebook", "https://www.facebook.com/dmitry.konishchev", "Facebook" ),
+            ( "blogger",  "https://konishchevdmitry.blogspot.com/",     "KonishchevDmitry's small blog" ),
+        ],
     }
 
 @app.route("/favicon.ico")
