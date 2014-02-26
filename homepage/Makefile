@@ -16,7 +16,7 @@ CSS := $(LESS:%.less=%.css)
 build: $(CSS) $(MO_PATH)
 
 clean:
-	rm -f $(POT_PATH) $(PO_PATH).orig $(MO_PATH)
+	rm -f $(POT_PATH) $(PO_PATH).orig $(CSS) $(MO_PATH)
 
 %.css: %.less
 	lessc $< $@

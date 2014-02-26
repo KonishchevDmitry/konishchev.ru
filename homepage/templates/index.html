@@ -14,24 +14,16 @@
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic">
         <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="css/style.css")}}">
 
-        <noscript>
-            <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="css/noscript.css")}}">
-        </noscript>
-
         <title>{{full_name}}</title>
     </head>
 
     <body>
         <div id="profile">
             <div id="language-selector">
-            <div>
-                <a href="{{url_for("index", lang="ru")}}"><img
-                    class="flag" title="Русская версия" alt="ru"
+                <a href="{{url_for("index", lang="ru")}}"><img title="Русская версия" alt="ru"
                     src="{{url_for("static", filename="images/flag-ru.png")}}"></a>
-                <a href="{{url_for("index", lang="en") }}"><img
-                    class="flag" title="English version" alt="en"
+                <a href="{{url_for("index", lang="en") }}"><img title="English version" alt="en"
                     src="{{url_for("static", filename="images/flag-us.png")}}"></a>
-            </div>
             </div>
 
             <div class="g-person" data-width="300" data-showtagline="false"
