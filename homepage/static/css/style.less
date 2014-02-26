@@ -2,30 +2,29 @@ img {
     border-style: none;
 }
 
-img.flag {
-    width: 16px;
-    height: 16px;
-    vertical-align: bottom;
-}
-
-@media (min-height:700px){
-    div#language-selector {
+div#language-selector {
+    img.flag {
+        width: 16px;
+        height: 16px;
+        vertical-align: bottom;
+    }
+    @media (min-height:700px) {
         position: relative;
+
+        div:first-child {
+            text-align: right;
+            position: absolute;
+            top: -21px;
+            width: 100%;
+        }
     }
-    div#language-selector div:first-child {
-        text-align: right;
-        position: absolute;
-        top: -21px;
+    @media (max-height:699px) {
         width: 100%;
-    }
-}
-@media (max-height:699px){
-    div#language-selector {
-        width: 100%;
-    }
-    div#language-selector div:first-child {
-        text-align: right;
-        width: 100%;
+
+        div:first-child {
+            text-align: right;
+            width: 100%;
+        }
     }
 }
 
@@ -42,6 +41,7 @@ div#profile {
     margin: auto;
     padding: 0;
 }
+
 div#contacts {
     border: 1px solid #d8d8d8;
     border-bottom-width: 2px;
@@ -58,43 +58,49 @@ div#contacts {
     font: normal 13px Roboto,arial,sans-serif;
 
     padding: 15px;
-}
-div#contacts a {
-    color: #427fed;
-}
-div#contacts div.section {
-    margin: 16px 0px 0px;
-    padding: 0;
-}
-div#contacts div.section:first-child {
-    margin-top: 0;
-}
-div#contacts div.section-body {
-    padding-top: 10px;
-}
-div#contacts div.section em {
-    color: #262626;
-    font: 300 20px Roboto,arial,sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-}
-div#contacts ul.contacts {
-    margin: 0;
-    padding: 0;
-}
-div#contacts li.contact {
-    list-style-type: none;
-    height: 16px;
-    margin-top: 10px;
-    vertical-align: bottom;
-}
-div#contacts li.contact:first-child {
-    margin-top: 0;
-}
-div#contacts img.icon {
-    width: 16px;
-    height: 16px;
-    padding-right: 5px;
-    vertical-align: bottom;
+
+    a {
+        color: #427fed;
+    }
+
+    div.section {
+        margin: 16px 0px 0px;
+        padding: 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        em {
+            color: #262626;
+            font: 300 20px Roboto,arial,sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    }
+    div.section-body {
+        padding-top: 10px;
+    }
+    ul.contacts {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style-type: none;
+            height: 16px;
+            margin-top: 10px;
+            vertical-align: bottom;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+    img.icon {
+        width: 16px;
+        height: 16px;
+        padding-right: 5px;
+        vertical-align: bottom;
+    }
 }

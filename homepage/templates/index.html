@@ -59,7 +59,7 @@
                     <em>{{_("Contacts:")}}</em>
                     <div class="section-body">
                     <ul class="contacts">
-                        {% for contact in contacts %}<li class="contact">
+                        {% for contact in contacts %}<li>
                             <img class="icon" src="{{url_for("static", filename="images/external-favicons/" + contact[0] + ".ico")}}"><a
                                 href="{{contact[1]}}">{{contact[2]}}</a>
                         </li>{% endfor %}
