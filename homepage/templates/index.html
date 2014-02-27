@@ -18,7 +18,7 @@
     </head>
 
     <body>
-        <div id="profile">
+        <div id="profile" itemscope itemtype="http://schema.org/Person">
             <div id="language-selector">
                 <a href="{{url_for("index", lang="ru")}}"><img title="Русская версия" alt="ru"
                     src="{{url_for("static", filename="images/flag-ru.png")}}"></a>
@@ -30,32 +30,36 @@
                 data-showcoverphoto="false" data-rel="author"
                 data-href="//plus.google.com/117508430140925454932"></div>
 
-            <!-- TODO microdata -->
             <noscript>
-                <div id="badge" itemscope itemtype="http://schema.org/Person">
-                    <a href="https://www.google.com/+DmitryKonishchev" itemprop="url">
+                <div id="badge">
+                    <a href="https://www.google.com/+DmitryKonishchev">
                         <img id="photo" width="120" height="120" itemprop="image"
                             src="{{url_for("static", filename="images/photo.jpg")}}">
-                        <span itemprop="name">{{full_name}}</span>
+                        {{full_name}}
                     </a>
                 </div>
             </noscript>
 
-            <div id="contacts">
+            <div id="about">
                 <div class="section">
-                    <em>{{full_name}}</em>
-                    <div class="section-body">{{location}}<br>{{occupation}}</div>
+                    <em itemprop="name">{{full_name}}</em>
+                    <div class="section-body">
+                        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                            <span itemprop="addressRegion">{{location}}</span>
+                        </span><br>
+                        <span itemprop="jobTitle">{{occupation}}</span>
+                    </div>
                 </div>
 
                 <div class="section">
                     <em>{{_("Contacts:")}}</em>
                     <div class="section-body">
-                    <ul class="contacts">
-                        {% for contact in contacts %}<li>
-                            <img class="icon" src="{{url_for("static", filename="images/external-favicons/" + contact[0] + ".ico")}}"><a
-                                href="{{contact[1]}}">{{contact[2]}}</a>
-                        </li>{% endfor %}
-                    </ul>
+                        <ul class="contacts">
+                            {% for contact in contacts %}<li>
+                                <img class="icon" src="{{url_for("static", filename="images/external-favicons/" + contact.name + ".ico")}}"><a
+                                    href="{{contact.url}}" itemprop="{{contact.itemprop}}">{{contact.title}}</a>
+                            </li>{% endfor %}
+                        </ul>
                     </div>
                 </div>
             </div>
