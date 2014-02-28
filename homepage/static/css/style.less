@@ -1,18 +1,20 @@
-/* TODO */
+@flag-size: 16px;
 @badge-width: 300px;
-@badge-height: 250px;
-@contacts-height: 368px;
+@badge-height: 204px;
+@contacts-height: 371px;
 @block-spacing: 4px;
 @block-padding: 15px;
 @profile-margin: 5px;
 @profile-height: (@profile-margin * 2 + @badge-height + @block-spacing + @contacts-height);
-@normal-device-height: ~"(min-height: @{profile-height})";
+@large-screen-height: (@profile-height + 2 * @flag-size + 50px);
+@large-screen: ~"(min-height: @{large-screen-height})";
 
 @link-color: #427fed;
 @emphasized-color: #262626;
 @thin-border-color: #d5d5d5;
 
 body {
+    // TODO: alt uses this default
     font: normal 16px Roboto,arial,sans-serif;
 }
 
@@ -58,16 +60,18 @@ img {
 
 div#language-selector {
     width: 100%;
-    text-align: right;
 
-    @media @normal-device-height {
+    text-align: right;
+    line-height: @flag-size;
+
+    @media @large-screen {
         position: absolute;
-        top: -21px;
+        top: -@flag-size;
     }
 
     img {
-        width: 16px;
-        height: 16px;
+        width: @flag-size;
+        height: @flag-size;
         vertical-align: bottom;
     }
 }
@@ -76,7 +80,7 @@ div#language-selector {
 div#profile {
     width: @badge-width;
 
-    @media @normal-device-height {
+    @media @large-screen {
         height: @profile-height;
     }
 
@@ -96,6 +100,7 @@ div#profile {
 div#badge {
     border: 1px solid @thin-border-color;
     .border-radius(3px);
+    .box-sizing(border-box);
 
     padding: @block-padding;
     margin-bottom: @block-spacing;
@@ -148,7 +153,9 @@ div#about {
         padding: 0;
 
         li {
-            height: 16px;
+            @favicon-size: 16px;
+
+            height: @favicon-size;
             margin-top: 10px;
             list-style-type: none;
 
@@ -161,8 +168,8 @@ div#about {
             }
 
             img.icon {
-                width: 16px;
-                height: 16px;
+                width: @favicon-size;
+                height: @favicon-size;
                 padding-right: 5px;
                 vertical-align: bottom;
             }
