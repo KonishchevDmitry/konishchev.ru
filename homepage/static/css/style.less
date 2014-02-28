@@ -4,7 +4,8 @@
 @contacts-height: 368px;
 @block-spacing: 4px;
 @block-padding: 15px;
-@profile-height: (@badge-height + @block-spacing + @contacts-height);
+@profile-margin: 5px;
+@profile-height: (@profile-margin * 2 + @badge-height + @block-spacing + @contacts-height);
 @normal-device-height: ~"(min-height: @{profile-height})";
 
 @link-color: #427fed;
@@ -85,8 +86,10 @@ div#profile {
     left: 0;
     right: 0;
 
-    // TODO: margin
     margin: auto;
+
+    // Emulate margin using border
+    border: @profile-margin solid #FFFFFF;
 }
 
 
