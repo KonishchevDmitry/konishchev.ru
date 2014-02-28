@@ -8,10 +8,14 @@ setup(
     install_requires=["Flask", "Flask-Babel"],
 
     packages = find_packages(),
-    # TODO: external favicons + MANIFEST.in
     package_data={ "homepage": [
         "homepage.ini",
-        "static/*/*",
+        "static/css/*.css",
+        "static/images/*.ico",
+        "static/images/*.jpg",
+        "static/images/*.png",
+        "static/images/external-favicons/*.ico",
+        "static/robots/*.html",
         "templates/*.html",
         "translations/*/LC_MESSAGES/messages.mo",
     ]},

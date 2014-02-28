@@ -16,3 +16,4 @@ dist: build
 clean:
 	make -C $(PROJECT) clean
 	rm -rf build dist $(PROJECT).egg-info
+	[ ! -d .git ] || git clean -ix
