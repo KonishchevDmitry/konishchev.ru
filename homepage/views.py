@@ -13,8 +13,6 @@ def index():
     Contact = namedtuple("Contact", ("name", "url", "title", "itemprop"))
 
     return {
-        "lang": util.get_locale(),
-
         "keywords": full_name + ", " + _("profile"),
         "description": _("Developer at CROC Incorporated | Russian Federation"),
 

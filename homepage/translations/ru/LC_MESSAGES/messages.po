@@ -35,6 +35,9 @@ msgstr "Разработчик в \"КРОК инкорпорейтед\""
 msgid "VK"
 msgstr "ВКонтакте"
 
+msgid "Summary:"
+msgstr "Общие сведения:"
+
 msgid "Contacts:"
 msgstr "Контакты:"
 
