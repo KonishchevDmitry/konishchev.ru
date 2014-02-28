@@ -13,7 +13,7 @@ def index():
     Contact = namedtuple("Contact", ("name", "url", "title", "itemprop"))
 
     return {
-        "keywords": full_name + ", " + _("profile"),
+        "keywords": ", ".join((full_name, _("profile"), _("contacts"))),
         "description": _("Developer at CROC Incorporated | Russian Federation"),
 
         "full_name": full_name,
