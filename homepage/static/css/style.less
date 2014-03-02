@@ -1,17 +1,17 @@
+// We have to calculate all sizes to be able to properly align the profile box
+// on all devices
 @flag-size: 16px;
-@badge-width: 300px;
 @badge-height: 204px;
 @contacts-height: 371px;
 @block-spacing: 4px;
 @block-padding: 15px;
 @profile-margin: 5px;
 @profile-height: (@profile-margin * 2 + @badge-height + @block-spacing + @contacts-height);
-@large-screen-height: (@profile-height + 2 * @flag-size + 50px);
+@large-screen-height: (@flag-size + @profile-height + @flag-size + 50px);
 @large-screen: ~"(min-height: @{large-screen-height})";
 
 @link-color: #427fed;
 @emphasized-color: #262626;
-@thin-border-color: #d5d5d5;
 
 body {
     font: normal 14px Roboto,arial,sans-serif;
@@ -24,19 +24,11 @@ a {
     &:hover, &:active {
         color: @link-color;
         text-decoration: underline;
-
-        span.profile-link {
-            color: @link-color;
-        }
     }
+
     &:focus {
         outline: 0;
     }
-}
-
-span.profile-link {
-    font-size: 12px;
-    color: #aaaaaa;
 }
 
 img {
@@ -50,10 +42,9 @@ img {
     -webkit-border-radius: @radius;
 }
 
-.box-sizing (@sizing) {
-    box-sizing: @sizing;
-    -moz-box-sizing: @sizing;
-    -webkit-box-sizing: @sizing;
+.block-border () {
+    border: 1px solid #d5d5d5;
+    .border-radius(3px);
 }
 
 
@@ -64,6 +55,8 @@ div#language-selector {
     text-align: right;
     line-height: @flag-size;
 
+    // We don't want to take into account language selector block when
+    // center profile block
     @media @large-screen {
         position: absolute;
         top: -@flag-size;
@@ -78,7 +71,7 @@ div#language-selector {
 
 
 div#profile {
-    width: @badge-width;
+    width: 300px;
 
     @media @large-screen {
         height: @profile-height;
@@ -98,9 +91,7 @@ div#profile {
 
 
 div#badge {
-    border: 1px solid @thin-border-color;
-    .border-radius(3px);
-    .box-sizing(border-box);
+    .block-border;
 
     padding: @block-padding;
     margin-bottom: @block-spacing;
@@ -112,25 +103,33 @@ div#badge {
         .border-radius(50%);
 
         display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 10px;
+        margin: 0 auto 10px;
     }
 
     span.profile-name {
         font-size: 16px;
     }
+
+    span.profile-link {
+        font-size: 12px;
+        color: #aaaaaa;
+
+    }
+
+    a:hover, a:active {
+        span.profile-link {
+            color: @link-color;
+        }
+    }
 }
 
 
 div#about {
-    border: 1px solid @thin-border-color;
+    .block-border;
     border-top: 5px solid #6f85bf;
     border-bottom-width: 2px;
-    .box-sizing(border-box);
-    .border-radius(3px);
 
-    font-size: 13px;
+    font-size: 14px;
     padding: @block-padding;
 
     div.section {
@@ -141,10 +140,9 @@ div#about {
         }
 
         em {
-            color: @emphasized-color;
-            font-style: normal;
             font-weight: bold;
-            font-size: 14px;
+            font-style: normal;
+            color: @emphasized-color;
         }
     }
 
