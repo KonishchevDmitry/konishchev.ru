@@ -14,7 +14,6 @@ setup(
         "static/images/*.ico",
         "static/images/*.jpg",
         "static/images/*.png",
-        "static/images/external-favicons/*.ico",
         "static/robots/*.html",
         "templates/*.html",
         "translations/*/LC_MESSAGES/messages.mo",

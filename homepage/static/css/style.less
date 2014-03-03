@@ -10,8 +10,14 @@
 @large-screen-height: (@flag-size + @profile-height + @flag-size + 50px);
 @large-screen: ~"(min-height: @{large-screen-height})";
 
+@high-resolution-screen: ~"only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)";
+
 @link-color: #427fed;
 @emphasized-color: #262626;
+@image-path: "../images";
+
+@contact-icon-size: 16px;
+
 
 body {
     font: normal 14px Roboto,arial,sans-serif;
@@ -36,15 +42,24 @@ img {
 }
 
 
-.border-radius (@radius) {
+.border-radius(@radius) {
     border-radius: @radius;
     -moz-border-radius: @radius;
     -webkit-border-radius: @radius;
 }
 
-.block-border () {
+.block-border() {
     border: 1px solid #d5d5d5;
     .border-radius(3px);
+}
+
+
+.sprite {
+    background-repeat: no-repeat;
+}
+
+.sprite-image(@name, @suffix: "") {
+    background-image: url("@{image-path}/sprite-@{name}@{suffix}.png");
 }
 
 
@@ -155,9 +170,7 @@ div#about {
         padding: 0;
 
         li {
-            @favicon-size: 16px;
-
-            height: @favicon-size;
+            height: @contact-icon-size;
             margin-top: 10px;
             list-style-type: none;
 
@@ -170,12 +183,34 @@ div#about {
                 vertical-align: middle;
             }
 
-            img.icon {
-                width: @favicon-size;
-                height: @favicon-size;
-                padding-right: 5px;
+            img.contact-icon {
+                margin-right: 5px;
                 vertical-align: middle;
             }
         }
+    }
+}
+
+
+.sprite.contact-icon {
+    .sprite-image(contact-icons);
+    width: @contact-icon-size;
+    height: @contact-icon-size;
+}
+
+.sprite.contact-icon.blogger { background-position: 0px 0px; }
+.sprite.contact-icon.facebook { background-position: -16px 0px; }
+.sprite.contact-icon.github { background-position: -32px 0px; }
+.sprite.contact-icon.gmail { background-position: -48px 0px; }
+.sprite.contact-icon.gplus { background-position: -64px 0px; }
+.sprite.contact-icon.linkedin { background-position: -80px 0px; }
+.sprite.contact-icon.moikrug { background-position: -96px 0px; }
+.sprite.contact-icon.twitter { background-position: -112px 0px; }
+.sprite.contact-icon.vk { background-position: -128px 0px; }
+
+@media @high-resolution-screen {
+    .sprite.contact-icon {
+        .sprite-image(contact-icons, -2x);
+        background-size: @contact-icon-size * 9 @contact-icon-size;
     }
 }
