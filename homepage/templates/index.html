@@ -51,7 +51,7 @@
                     <div class="section-body">
                         <ul class="contacts">
                             {% for contact in contacts %}<li>
-                                <img class="icon" alt="{{contact.name}}"
+                                <img class="icon" alt=""
                                     src="{{url_for("static", filename="images/external-favicons/" + contact.name + ".ico")}}"><a
                                     href="{{contact.url}}" target="_blank" itemprop="{{contact.itemprop}}">{{contact.title}}</a>
                             </li>{% endfor %}
