@@ -20,12 +20,10 @@
     <body>
         <div id="profile" itemscope itemtype="http://schema.org/Person">
             <div id="language-selector">
-                <a href="{{url_for("index", lang="ru")}}"><img
-                    class="sprite flag ru" alt="" title="Русская версия"
-                    src="{{url_for("static", filename="images/transparent.gif")}}"></a>
-                <a href="{{url_for("index", lang="en") }}"><img
-                    class="sprite flag en" alt="" title="English version"
-                    src="{{url_for("static", filename="images/transparent.gif")}}"></a>
+                <a href="{{url_for("index", lang="ru")}}"><span
+                    class="sprite flag ru" title="Русская версия"></span></a>
+                <a href="{{url_for("index", lang="en") }}"><span
+                    class="sprite flag en" title="English version"></span></a>
             </div>
 
             <div id="badge">
@@ -53,8 +51,7 @@
                     <div class="section-body">
                         <ul class="contacts">
                             {% for contact in contacts %}<li>
-                                <img class="sprite contact-icon {{contact.name}}" alt=""
-                                    src="{{url_for("static", filename="images/transparent.gif")}}"><a
+                                <span class="sprite contact-icon {{contact.name}}"></span><a
                                     href="{{contact.url}}" target="_blank" itemprop="{{contact.itemprop}}">{{contact.title}}</a>
                             </li>{% endfor %}
                         </ul>
