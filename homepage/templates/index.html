@@ -20,10 +20,12 @@
     <body>
         <div id="profile" itemscope itemtype="http://schema.org/Person">
             <div id="language-selector">
-                <a href="{{url_for("index", lang="ru")}}"><img alt="ru" title="Русская версия"
-                    src="{{url_for("static", filename="images/flag-ru.png")}}"></a>
-                <a href="{{url_for("index", lang="en") }}"><img alt="en" title="English version"
-                    src="{{url_for("static", filename="images/flag-us.png")}}"></a>
+                <a href="{{url_for("index", lang="ru")}}"><img
+                    class="sprite flag ru" alt="" title="Русская версия"
+                    src="{{url_for("static", filename="images/transparent.png")}}"></a>
+                <a href="{{url_for("index", lang="en") }}"><img
+                    class="sprite flag en" alt="" title="English version"
+                    src="{{url_for("static", filename="images/transparent.png")}}"></a>
             </div>
 
             <div id="badge">

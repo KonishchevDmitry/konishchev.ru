@@ -10,8 +10,6 @@
 @large-screen-height: (@flag-size + @profile-height + @flag-size + 50px);
 @large-screen: ~"(min-height: @{large-screen-height})";
 
-@high-resolution-screen: ~"only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)";
-
 @link-color: #427fed;
 @emphasized-color: #262626;
 @image-path: "../images";
@@ -55,11 +53,26 @@ img {
 
 
 .sprite {
+    display: inline-block;
     background-repeat: no-repeat;
 }
 
-.sprite-image(@name, @suffix: "") {
-    background-image: url("@{image-path}/sprite-@{name}@{suffix}.png");
+.sprite-image(@name) {
+    background-image: url("@{image-path}/sprite-@{name}.png");
+}
+
+.sprite-image-with-factor(@name, @factor) {
+    background-image: url("@{image-path}/sprite-@{name}-@{factor}x.png");
+}
+
+.high-resolution-sprite(@name, @factor) {
+    @media-query: ~"only screen and (min--moz-device-pixel-ratio: @{factor}), only screen and (-o-min-device-pixel-ratio: @{factor}/1), only screen and (-webkit-min-device-pixel-ratio: @{factor}), only screen and (min-device-pixel-ratio: @{factor})";
+
+    @media @media-query {
+        .sprite.@{name} {
+            .sprite-image-with-factor(@name, @factor);
+        }
+    }
 }
 
 
@@ -77,9 +90,8 @@ div#language-selector {
         top: -@flag-size;
     }
 
-    img {
-        width: @flag-size;
-        height: @flag-size;
+    img.flag {
+        // TODO: flags should have alt text
         vertical-align: bottom;
     }
 }
@@ -193,10 +205,13 @@ div#about {
 
 
 .sprite.contact-icon {
-    .sprite-image(contact-icons);
+    .sprite-image(contact-icon);
     width: @contact-icon-size;
     height: @contact-icon-size;
+    background-size: @contact-icon-size * 9 @contact-icon-size;
 }
+
+.high-resolution-sprite(contact-icon, 2);
 
 .sprite.contact-icon.blogger { background-position: 0px 0px; }
 .sprite.contact-icon.facebook { background-position: -16px 0px; }
@@ -208,9 +223,18 @@ div#about {
 .sprite.contact-icon.twitter { background-position: -112px 0px; }
 .sprite.contact-icon.vk { background-position: -128px 0px; }
 
-@media @high-resolution-screen {
-    .sprite.contact-icon {
-        .sprite-image(contact-icons, -2x);
-        background-size: @contact-icon-size * 9 @contact-icon-size;
-    }
+
+.sprite.flag {
+    .sprite-image(flag);
+    width: @flag-size;
+    height: @flag-size;
+    background-size: @flag-size * 2 @flag-size;
 }
+
+.high-resolution-sprite(flag, 1.5);
+.high-resolution-sprite(flag, 2);
+.high-resolution-sprite(flag, 3);
+.high-resolution-sprite(flag, 4);
+
+.sprite.flag.en { background-position: 0px 0px; }
+.sprite.flag.ru { background-position: -16px 0px; }
