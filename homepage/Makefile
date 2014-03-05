@@ -19,7 +19,7 @@ clean:
 	rm -f $(POT_PATH) $(PO_PATH).orig $(CSS) $(MO_PATH)
 
 %.css: %.less
-	lessc $< $@
+	lessc --strict-units=on --strict-math=on -O2 $< $@
 
 $(MO_PATH): $(PO_PATH)
 	pybabel compile -d $(TRANSLATIONS_PATH) -l $(LANG)

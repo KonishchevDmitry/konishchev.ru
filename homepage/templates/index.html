@@ -28,8 +28,10 @@
 
             <div id="badge">
                 <a href="https://www.google.com/+DmitryKonishchev" target="_blank">
-                    <img id="photo" width="120" height="120" itemprop="image" alt="{{full_name}}"
-                        src="{{url_for("static", filename="images/photo-3x.jpg")}}">
+                    <div id="photo">
+                        <meta itemprop="image"
+                            content="{{url_for("static", _external=True, filename="images/photo-1.5x.jpg")}}">
+                    </div>
                     <span class="profile-name" itemprop="name">{{full_name}}</span><br>
                     <span class="profile-link">google.com/+DmitryKonishchev</span>
                 </a>

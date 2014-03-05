@@ -51,28 +51,22 @@ img {
     .border-radius(3px);
 }
 
+.image(@name) {
+    background-image: url("@{image-path}/@{name}");
+}
+
+.high-resolution-image(@name, @factor) {
+    @media-query: ~"only screen and (min--moz-device-pixel-ratio: @{factor}), only screen and (-o-min-device-pixel-ratio: @{factor}/1), only screen and (-webkit-min-device-pixel-ratio: @{factor}), only screen and (min-device-pixel-ratio: @{factor})";
+
+    @media @media-query {
+        .image(@name);
+    }
+}
+
 
 .sprite {
     display: inline-block;
     background-repeat: no-repeat;
-}
-
-.sprite-image(@name) {
-    background-image: url("@{image-path}/sprite-@{name}.png");
-}
-
-.sprite-image-with-factor(@name, @factor) {
-    background-image: url("@{image-path}/sprite-@{name}-@{factor}x.png");
-}
-
-.high-resolution-sprite(@name, @factor) {
-    @media-query: ~"only screen and (min--moz-device-pixel-ratio: @{factor}), only screen and (-o-min-device-pixel-ratio: @{factor}/1), only screen and (-webkit-min-device-pixel-ratio: @{factor}), only screen and (min-device-pixel-ratio: @{factor})";
-
-    @media @media-query {
-        .sprite.@{name} {
-            .sprite-image-with-factor(@name, @factor);
-        }
-    }
 }
 
 
@@ -91,7 +85,6 @@ div#language-selector {
     }
 
     .flag {
-        // TODO: flags should have alt text
         vertical-align: bottom;
     }
 }
@@ -125,11 +118,21 @@ div#badge {
 
     text-align: center;
 
-    img#photo {
+    #photo {
+        .image("photo.jpg");
+        .high-resolution-image("photo-1.5x.jpg", 1.5);
+        .high-resolution-image("photo-2x.jpg", 2);
+        .high-resolution-image("photo-3x.jpg", 3);
+        .high-resolution-image("photo-4x.jpg", 4);
+
+        width: 120px;
+        height: 120px;
+        background-size: 120px 120px;
+        background-repeat: no-repeat;
+
         border: 0;
         .border-radius(50%);
 
-        display: block;
         margin: 0 auto 10px;
     }
 
@@ -205,16 +208,16 @@ div#about {
 
 
 .sprite.contact-icon {
-    .sprite-image(contact-icon);
+    .image("sprite-contact-icon.png");
+    .high-resolution-image("sprite-contact-icon-1.5x.png", 1.5);
+    .high-resolution-image("sprite-contact-icon-2x.png", 2);
+    .high-resolution-image("sprite-contact-icon-3x.png", 3);
+    .high-resolution-image("sprite-contact-icon-4x.png", 4);
+
     width: @contact-icon-size;
     height: @contact-icon-size;
-    background-size: @contact-icon-size * 9 @contact-icon-size;
+    background-size: (@contact-icon-size * 9) @contact-icon-size;
 }
-
-.high-resolution-sprite(contact-icon, 1.5);
-.high-resolution-sprite(contact-icon, 2);
-.high-resolution-sprite(contact-icon, 3);
-.high-resolution-sprite(contact-icon, 4);
 
 .sprite.contact-icon.blogger { background-position: 0px 0px; }
 .sprite.contact-icon.facebook { background-position: -16px 0px; }
@@ -228,16 +231,16 @@ div#about {
 
 
 .sprite.flag {
-    .sprite-image(flag);
+    .image("sprite-flag.png");
+    .high-resolution-image("sprite-flag-1.5x.png", 1.5);
+    .high-resolution-image("sprite-flag-2x.png", 2);
+    .high-resolution-image("sprite-flag-3x.png", 3);
+    .high-resolution-image("sprite-flag-4x.png", 4);
+
     width: @flag-size;
     height: @flag-size;
-    background-size: @flag-size * 2 @flag-size;
+    background-size: (@flag-size * 2) @flag-size;
 }
-
-.high-resolution-sprite(flag, 1.5);
-.high-resolution-sprite(flag, 2);
-.high-resolution-sprite(flag, 3);
-.high-resolution-sprite(flag, 4);
 
 .sprite.flag.en { background-position: 0px 0px; }
 .sprite.flag.ru { background-position: -16px 0px; }
