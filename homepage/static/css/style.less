@@ -8,7 +8,7 @@
 @profile-margin: 5px;
 @profile-height: (@profile-margin * 2 + @badge-height + @block-spacing + @contacts-height);
 @large-screen-height: (@flag-size + @profile-height + @flag-size + 50px);
-@large-screen: ~"(min-height: @{large-screen-height})";
+@large-screen: ~"only screen and (min-height: @{large-screen-height})";
 
 @link-color: #427fed;
 @emphasized-color: #262626;
@@ -56,7 +56,7 @@ img {
 }
 
 .high-resolution-image(@name, @factor) {
-    @media-query: ~"only screen and (min--moz-device-pixel-ratio: @{factor}), only screen and (-o-min-device-pixel-ratio: @{factor}/1), only screen and (-webkit-min-device-pixel-ratio: @{factor}), only screen and (min-device-pixel-ratio: @{factor})";
+    @media-query: ~"(min--moz-device-pixel-ratio: @{factor}), (-o-min-device-pixel-ratio: @{factor}/1), (-webkit-min-device-pixel-ratio: @{factor}), (min-resolution: @{factor}dppx)";
 
     @media @media-query {
         .image(@name);
