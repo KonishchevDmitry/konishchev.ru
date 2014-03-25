@@ -37,6 +37,7 @@ def index():
 def favicon():
     return app.send_static_file("images/" + request.path[1:])
 
+@app.route("/04d8b30d5ce4.html")
 @app.route("/googlee5c41083383fc5e9.html")
 @app.route("/yandex_4620d67a71b3484a.html")
 def robots():
