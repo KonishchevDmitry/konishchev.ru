@@ -26,14 +26,14 @@ msgstr "профиль"
 msgid "contacts"
 msgstr "контакты"
 
-msgid "Developer at CROC Incorporated | Russian Federation"
-msgstr "Разработчик в \"КРОК инкорпорейтед\" | г. Жуковский Московской обл."
+msgid "Software Developer at Yandex | Russian Federation"
+msgstr "Разработчик в компании Яндекс | г. Жуковский Московской обл."
 
 msgid "Moscow Region, Russian Federation"
 msgstr "г. Жуковский Московской обл."
 
-msgid "Developer at CROC Incorporated"
-msgstr "Разработчик в \"КРОК инкорпорейтед\""
+msgid "Software Developer at Yandex"
+msgstr "Разработчик в компании Яндекс"
 
 msgid "VK"
 msgstr "ВКонтакте"

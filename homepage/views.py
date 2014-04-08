@@ -14,11 +14,11 @@ def index():
 
     return {
         "keywords": ", ".join((full_name, _("profile"), _("contacts"))),
-        "description": _("Developer at CROC Incorporated | Russian Federation"),
+        "description": _("Software Developer at Yandex | Russian Federation"),
 
         "full_name": full_name,
         "location": _("Moscow Region, Russian Federation"),
-        "occupation": _("Developer at CROC Incorporated"),
+        "occupation": _("Software Developer at Yandex"),
 
         "contacts": [
             Contact("gmail",    "mailto:konishchev@gmail.com",                "konishchev@gmail.com",          "email"),
