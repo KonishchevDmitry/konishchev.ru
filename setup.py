@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="homepage",
-    version=datetime.datetime.today().strftime("%Y.%m.%d-%H.%M.%S"),
+    version=datetime.datetime.today().strftime("%Y.%m.%d.%H.%M.%S"),
 
     install_requires=["Flask", "Flask-Babel"],
 

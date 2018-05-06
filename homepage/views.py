@@ -1,7 +1,7 @@
 from collections import namedtuple
 
 from flask import request
-from flask.ext.babel import _
+from flask_babel import _
 
 from homepage import app
 from homepage import util
